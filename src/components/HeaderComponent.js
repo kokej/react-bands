@@ -24,17 +24,17 @@ class HeaderComponent extends Component {
                           <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Bands
                           </a>
-                          <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a className="dropdown-item" href="#">
+                          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li className="dropdown-item">
                               <NavLink className="nav-link" to="/band/beatles">The Beatles</NavLink>
-                            </a>
-                            <a className="dropdown-item" href="#">
+                            </li>
+                            <li className="dropdown-item">
                               <NavLink className="nav-link" to="/band/rolling-stones">The Rolling Stones</NavLink>
-                            </a>
-                            <a className="dropdown-item" href="#">
+                            </li>
+                            <li className="dropdown-item">
                               <NavLink className="nav-link" to="/band/queen">Queen</NavLink>
-                            </a>
-                          </div>
+                            </li>
+                          </ul>
                         </li>
                     </ul>
                 </div>
