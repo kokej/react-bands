@@ -1,29 +1,36 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
+import { Route } from 'react-router';
+import { ConnectedRouter } from 'react-router-redux';
+import { Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
+
+import store, { history } from './store';
 
 import RouterComponent from './router/routerComponent';
 import HomeComponent from './components/HomeComponent';
 import BandComponent from './components/BandComponent';
 import FooBarComponent from './components/FooBarComponent';
 import NotFoundComponent from './components/NotFoundComponent';
-import AppCSS from './styles/App.css';
+import './styles/App.css';
 
 class App extends Component {
     render() {
         return (
-            <Router>
-                <RouterComponent>
-                    <Switch>
-                        <Route exact path="/" component={HomeComponent}/>
-                        <Route exact path="/home" component={HomeComponent}/>
-                        <Route exact path="/foo" component={FooBarComponent}/>
-                        <Route exact path="/bar" component={FooBarComponent}/>
-                        <Route path="/band/:name" component={BandComponent}/>
-                        <Route path="**" component={NotFoundComponent}/>
-                    </Switch>
-                </RouterComponent>
-            </Router>
+          <Provider store={store}>
+            <ConnectedRouter history={history}>
+              <RouterComponent>
+                <Switch>
+                  <Route exact path="/" component={HomeComponent}/>
+                  <Route exact path="/foo" component={FooBarComponent}/>
+                  <Route exact path="/bar" component={FooBarComponent}/>
+                  <Route path="/band/:name" component={BandComponent}/>
+                  <Route path="**" component={NotFoundComponent}/>
+                </Switch>
+              </RouterComponent>
+            </ConnectedRouter>
+          </Provider>
         );
     }
 }
