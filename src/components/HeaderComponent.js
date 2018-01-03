@@ -29,13 +29,13 @@ class HeaderComponent extends Component {
                           </a>
                           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li className="dropdown-item">
-                              <NavLink className="nav-link" to="/band/beatles">The Beatles</NavLink>
+                              <NavLink className="nav-link" to="/band/The_Beatles">The Beatles</NavLink>
                             </li>
                             <li className="dropdown-item">
-                              <NavLink className="nav-link" to="/band/rolling-stones">The Rolling Stones</NavLink>
+                              <NavLink className="nav-link" to="/band/The_Rolling_Stones">The Rolling Stones</NavLink>
                             </li>
                             <li className="dropdown-item">
-                              <NavLink className="nav-link" to="/band/queen">Queen</NavLink>
+                              <NavLink className="nav-link" to="/band/Queen_(band)">Queen</NavLink>
                             </li>
                           </ul>
                         </li>

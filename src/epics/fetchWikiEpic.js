@@ -8,19 +8,25 @@ export const fetchWikiEpic = action$ =>
     .mergeMap(action =>
       superagent('get', WIKI_URL)
         .query({
-          titles: 'queen',
+          titles: action.payload,
           action: 'query',
           format: 'json',
-          prop: 'extracts'
+          prop: 'extracts',
+          exintro: 'true'
         })
         .use(jsonp({callbackName: ''}))
         .then(function(res){
+          let parseRes;
+          if(res.body){
+            let obj = res.body.query.pages;
+            parseRes = obj[Object.keys(obj)[0]];
+          }
           return {
-            type: 'FETCH_BAND_WIKI_FULFILLED',
-            payload: res
+            type: 'FETCH_WIKI_FULFILLED',
+            payload: parseRes || ''
           }
         })
         .catch(function(error){
-          debugger;
+          console.log('error fetching wikipedia data --> ', error);
         })
       )

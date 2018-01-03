@@ -3,7 +3,7 @@ export default (state = {}, action) => {
     case 'FETCH_WIKI_FULFILLED':
       return {
         ...state,
-        [action.payload]: action.payload
+        band: action.payload
       };
 
     default:

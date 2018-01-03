@@ -1,2 +1,2 @@
 React-Bands
-https://dashboard.heroku.com/apps/guarded-mesa-87141
+https://kokej-react-bands.herokuapp.com/
